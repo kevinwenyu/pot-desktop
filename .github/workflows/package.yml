@@ -1,9 +1,9 @@
-name: Package-Simple
+name: Package-Portable
 on:
     workflow_dispatch:
 
 jobs:
-    build-windows:
+    build-windows-portable:
         runs-on: windows-latest
         steps:
             - name: Checkout
@@ -25,15 +25,17 @@ jobs:
             - name: Install Dependencies
               run: pnpm install
 
-            - name: Build Pot (Windows x64)
-              # 使用 --target 明确指定 64 位，避免脚本去跑 32 位导致报错
-              run: pnpm tauri build --target x86_64-pc-windows-msvc
+            - name: Build Pot Portable
+              # 关键点：添加环境变量跳过签名，并指定只生成二进制文件
+              run: pnpm tauri build --target x86_64-pc-windows-msvc --bundles nsis
               env:
                 CI: true
+                TAURI_SKIP_SIGNATURE_CHECK: true
+                TAURI_PRIVATE_KEY: "" # 清空私钥要求
 
-            - name: Upload Artifact
+            - name: Upload Binary
               uses: actions/upload-artifact@v4
               with:
-                name: pot-windows-x64-custom
-                # 直接上传整个 bundle 目录，不管它叫什么名字
-                path: src-tauri/target/x86_64-pc-windows-msvc/release/bundle/
+                name: pot-portable-exe
+                # 直接指向生成的 exe 文件，这通常就是最纯净的绿色版
+                path: src-tauri/target/x86_64-pc-windows-msvc/release/pot.exe
