@@ -40,7 +40,9 @@
             "pl": "Polish",
             "nl": "Dutch",
             "uk": "Ukrainian",
-            "he": "Hebrew"
+            "he": "Hebrew",
+            "cs": "Czech",
+            "hu": "Hungary"
         },
         "config": {
             "general": {
