@@ -31,6 +31,8 @@ export const languageList = [
     'nl',
     'uk',
     'he',
+    'cs',
+    'hu',
 ];
 
 // https://flagicons.lipis.dev/
@@ -65,4 +67,6 @@ export enum LanguageFlag {
     nl = 'nl',
     uk = 'ua',
     he = 'il',
+    cs = 'cz', // 捷克国旗代码是 cz
+    hu = 'hu', // 匈牙利国旗代码是 hu
 }
