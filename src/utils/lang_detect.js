@@ -27,7 +27,9 @@ async function baidu_detect(text) {
         nob: 'nb_no',
         nno: 'nn_no',
         per: 'fa',
-        ukr: 'uk'
+        ukr: 'uk',
+        cs: 'cs',
+        hu: 'hu'
     };
     let res = await fetch('https://fanyi.baidu.com/langdetect', {
         method: 'POST',
@@ -68,6 +70,8 @@ async function tencent_detect(text) {
         ms: 'ms',
         ar: 'ar',
         hi: 'hi',
+        cs: 'cs',
+        hu: 'hu',
     };
     let res = await fetch('https://fanyi.qq.com/api/translate', {
         method: 'POST',
@@ -111,7 +115,9 @@ async function google_detect(text) {
         km: 'km',
         fa: 'fa',
         no: 'nb_no',
-        uk: 'uk'
+        uk: 'uk',
+        cs: 'cs',
+        hu: 'hu'
     };
     let res = await fetch(
         `https://translate.google.com/translate_a/single?dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t`,
@@ -168,7 +174,9 @@ async function niutrans_detect(text) {
         nb: 'nb_no',
         nn: 'nn_no',
         fa: 'fa',
-        uk: 'uk'
+        uk: 'uk',
+        cs: 'cs',
+        hu: 'hu'
     };
     let res = await fetch('https://test.niutrans.com/NiuTransServer/language', {
         method: 'GET',
@@ -209,7 +217,9 @@ async function yandex_detect(text) {
         hi: 'hi',
         no: 'nb_no',
         fa: 'fa',
-        uk: 'uk'
+        uk: 'uk',
+        cs: 'cs',
+        hu: 'hu'
     };
 
     let res = await fetch('https://translate.yandex.net/api/v1/tr.json/detect', {
@@ -255,7 +265,9 @@ async function bing_detect(text) {
         km: 'km',
         nb: 'nb_no',
         fa: 'fa',
-        uk: 'uk'
+        uk: 'uk',
+        cs: 'cs',
+        hu: 'hu'
     };
     const token_url = 'https://edge.microsoft.com/translate/auth';
 
