@@ -1,5 +1,6 @@
 name: Package
 on:
+    workflow_dispatch:  # 添加这一行，手动触发开关
     push:
         branches: [master]
         tags-ignore: [updater]
