@@ -111,7 +111,9 @@ async function google_detect(text) {
         km: 'km',
         fa: 'fa',
         no: 'nb_no',
-        uk: 'uk'
+        uk: 'uk',
+        cs: 'cs',  //add Czech support.
+        hu: 'hu',  //add Hungary support.
     };
     let res = await fetch(
         `https://translate.google.com/translate_a/single?dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t`,
