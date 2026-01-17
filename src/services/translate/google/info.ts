@@ -34,4 +34,6 @@ export enum Language {
     nl = 'nl',
     uk = 'uk',
     he = 'he',
+    cs = 'cs', //add Czech support
+    hu = 'hu', //add hungary support
 }
